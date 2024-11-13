@@ -5,7 +5,14 @@ meta {
 }
 
 put {
-  url: http://localhost:8081/api/users
-  body: none
+  url: {{baseUrl}}/api/users/1
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "name": "test1",
+    "email": "caca@gmail.com"
+  }
 }

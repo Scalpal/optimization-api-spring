@@ -1,6 +1,7 @@
 package com.exo1.exo1.mapper;
 
 import com.exo1.exo1.dto.UserDto;
+import com.exo1.exo1.entity.Project;
 import com.exo1.exo1.entity.User;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-11-12T16:19:11+0100",
+    date = "2024-11-13T11:39:33+0100",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.4 (Amazon.com Inc.)"
 )
 @Component
@@ -25,6 +26,10 @@ public class UserMapperImpl implements UserMapper {
 
         userDto.setName( user.getName() );
         userDto.setEmail( user.getEmail() );
+        List<Project> list = user.getProjects();
+        if ( list != null ) {
+            userDto.setProjects( new ArrayList<Project>( list ) );
+        }
 
         return userDto;
     }
@@ -39,6 +44,10 @@ public class UserMapperImpl implements UserMapper {
 
         user.setName( userDto.getName() );
         user.setEmail( userDto.getEmail() );
+        List<Project> list = userDto.getProjects();
+        if ( list != null ) {
+            user.setProjects( new ArrayList<Project>( list ) );
+        }
 
         return user;
     }

@@ -4,6 +4,8 @@ import com.exo1.exo1.dto.ProjectDto;
 import com.exo1.exo1.entity.Project;
 import com.exo1.exo1.service.ProjectService;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,9 +25,19 @@ public class ProjectController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @GetMapping
+    public ResponseEntity<List<ProjectDto>> getProjects(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "5") int size
+        ){
+        Pageable pageable = PageRequest.of(page, size);
+
+        return new ResponseEntity(projectService.getProjects(pageable), HttpStatus.OK);
+    }
+
     @GetMapping("/{projectId}")
-    public ResponseEntity<Project> getProject(@PathVariable Long projectId) {
-        Project response = projectService.getProject(projectId);
+    public ResponseEntity<ProjectDto> getProject(@PathVariable Long projectId) {
+        ProjectDto response = projectService.getProject(projectId);
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

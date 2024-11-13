@@ -17,6 +17,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Long id;
 
     private String name;
@@ -26,7 +27,7 @@ public class User {
 
     @ManyToMany
     @JoinTable(
-            name = "user_projects",
+            name = "projects_users",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "project_id")
     )

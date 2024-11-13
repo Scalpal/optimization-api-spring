@@ -1,6 +1,5 @@
 package com.exo1.exo1.mapper;
 
-import com.exo1.exo1.dto.UserCreateDto;
 import com.exo1.exo1.dto.UserDto;
 import com.exo1.exo1.entity.User;
 import org.mapstruct.Mapper;

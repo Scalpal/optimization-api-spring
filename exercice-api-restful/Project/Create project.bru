@@ -5,14 +5,52 @@ meta {
 }
 
 post {
-  url: http://localhost:8081/api/projects
+  url: {{baseUrl}}/api/projects
   body: json
   auth: none
 }
 
 body:json {
   {
-    "name": "Projet 1",
-    "description": "Le projet est nouveau"
+    "name": "le projet mbappé",
+    "description": "mbapporut",
+    "tasks": [
+      {
+        "title": "1",
+        "status": "string"
+      },
+      {
+        "title": "2",
+        "status": "string"
+      },
+      {
+        "title": "3",
+        "status": "string"
+      },
+      {
+        "title": "4",
+        "status": "string"
+      },
+      {
+        "title": "6",
+        "status": "string"
+      },
+      {
+        "title": "6",
+        "status": "string"
+      },
+      {
+        "title": "6",
+        "status": "string"
+      },
+      {
+        "title": "6",
+        "status": "string"
+      },
+      {
+        "title": "6",
+        "status": "string"
+      }
+    ]
   }
 }

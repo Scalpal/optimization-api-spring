@@ -1,10 +1,10 @@
 meta {
-  name: Update task
+  name: Get tasks
   type: http
-  seq: 4
+  seq: 5
 }
 
-put {
+get {
   url: {{baseUrl}}/api/tasks
   body: none
   auth: none

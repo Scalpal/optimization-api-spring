@@ -5,7 +5,32 @@ meta {
 }
 
 put {
-  url: http://localhost:8081/api/projects
-  body: none
+  url: {{baseUrl}}/api/projects/6
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "name": "Academiq",
+    "description": "Le projet qui va changer nos vies",
+    "tasks": [
+      {
+        "title": "1",
+        "status": "string"
+      },
+      {
+        "title": "2",
+        "status": "string"
+      },
+      {
+        "title": "3",
+        "status": "string"
+      },
+      {
+        "title": "4",
+        "status": "string"
+      }
+    ]
+  }
 }

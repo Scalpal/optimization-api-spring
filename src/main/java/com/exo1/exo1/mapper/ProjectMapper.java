@@ -13,4 +13,6 @@ public interface ProjectMapper {
     Project toEntity (ProjectDto projectDto);
 
     List<ProjectDto> toDtos (List<Project> projects);
+
+    List<Project> toEntities (List<ProjectDto> projectDtos);
 }

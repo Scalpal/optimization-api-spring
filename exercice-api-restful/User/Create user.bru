@@ -5,14 +5,47 @@ meta {
 }
 
 post {
-  url: http://localhost:8081/api/users
+  url: {{baseUrl}}/api/users
   body: json
   auth: none
 }
 
 body:json {
   {
-    "name": "test 1",
-    "email": "test1@gmail.com"
+    "name": "string",
+    "email": "string",
+    "projects": [
+      {
+        "id": 0,
+        "name": "string",
+        "description": "string",
+        "users": [
+          {
+            "id": 0,
+            "name": "string",
+            "email": "string",
+            "projects": [
+              "string"
+            ]
+          }
+        ],
+        "tasks": [
+          {
+            "id": 0,
+            "title": "string",
+            "status": "string",
+            "project": "string",
+            "user": {
+              "id": 0,
+              "name": "string",
+              "email": "string",
+              "projects": [
+                "string"
+              ]
+            }
+          }
+        ]
+      }
+    ]
   }
 }
